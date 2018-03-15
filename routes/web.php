@@ -17,3 +17,7 @@ Route::get('about','StaticPages@about')->name('about');
 
 Route::get('signup','Users@create')->name('signup');
 Route::resource('users','Users');
+
+Route::get('login', 'Sessions@create')->name('login');
+Route::post('login', 'Sessions@store')->name('login');
+Route::delete('logout', 'Sessions@destroy')->name('logout');
