@@ -21,3 +21,5 @@ Route::resource('users','Users');
 Route::get('login', 'Sessions@create')->name('login');
 Route::post('login', 'Sessions@store')->name('login');
 Route::delete('logout', 'Sessions@destroy')->name('logout');
+
+Route::resource('statuses','Statuses',['only'=>['store','destroy']]);
