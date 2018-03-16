@@ -23,3 +23,9 @@ Route::post('login', 'Sessions@store')->name('login');
 Route::delete('logout', 'Sessions@destroy')->name('logout');
 
 Route::resource('statuses','Statuses',['only'=>['store','destroy']]);
+
+Route::get('/users/{user}/followings', 'Users@followings')->name('users.followings');
+Route::get('/users/{user}/followers', 'Users@followers')->name('users.followers');
+
+Route::post('/users/followers/{user}', 'FollowersController@store')->name('followers.store');
+Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('followers.destroy');
